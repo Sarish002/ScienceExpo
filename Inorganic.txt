@@ -1,0 +1,57 @@
+{
+  "InorganicChemistry": {
+    "Branches": [
+      {
+        "Category": "Oxides",
+        "Examples": [
+          {
+            "Name": "Carbon Dioxide",
+            "Formula": "CO2",
+            "Type": "Acidic oxide",
+            "Uses": ["Carbonated drinks", "Fire extinguishers"]
+          },
+          {
+            "Name": "Magnesium Oxide",
+            "Formula": "MgO",
+            "Type": "Basic oxide",
+            "Uses": ["Refractory material", "Antacid"]
+          }
+        ]
+      },
+      {
+        "Category": "Salts",
+        "Examples": [
+          {
+            "Name": "Sodium Chloride",
+            "Formula": "NaCl",
+            "Type": "Neutral salt",
+            "Uses": ["Food seasoning", "Preservative"]
+          },
+          {
+            "Name": "Calcium Carbonate",
+            "Formula": "CaCO3",
+            "Type": "Insoluble salt",
+            "Uses": ["Cement", "Lime production"]
+          }
+        ]
+      },
+      {
+        "Category": "Acids",
+        "Examples": [
+          {
+            "Name": "Sulfuric Acid",
+            "Formula": "H2SO4",
+            "Type": "Strong acid",
+            "Uses": ["Battery acid", "Fertilizer production"]
+          },
+          {
+            "Name": "Nitric Acid",
+            "Formula": "HNO3",
+            "Type": "Strong acid",
+            "Uses": ["Explosives", "Etching metals"]
+          }
+        ]
+      }
+    ]
+  }
+}
