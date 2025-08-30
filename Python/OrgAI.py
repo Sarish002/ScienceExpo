@@ -1,14 +1,19 @@
+import sys
 import NomialAnalysis
 import FormulaicAnalysis
 
 # Logic
-while True:
-    query = input("Query: ")
+def Logic(query):
+    if query == "Q":
+        sys.exit()
     for i in range(10):
-        if str(i) in query:
-            FormulaicAnalysis.FormulaicAnalysis(query)
+        if str(i) in query or query in ["HCHO", "HCOOH"]:
+            return FormulaicAnalysis.FormulaicAnalysis(query)
             break
     else:
-        NomialAnalysis.NomialAnalysis(query)
-    print("---------------")
+        return NomialAnalysis.NomialAnalysis(query)
 
+if __name__ == "__main__":
+    while True:
+        query = input("Query (or) Quit (Q): ")
+        print(Logic(query))
