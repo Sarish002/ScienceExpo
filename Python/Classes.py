@@ -6,36 +6,36 @@ with open("../JSON/OrganicPrefixes.json", 'r') as file:
 with open("../JSON/Anions.json", 'r') as file:
     anions = json.load(file)
 
-# Acids
-class Acid:
-    def __init__(self, anion):
-        self.anion = anion
-
-        # Formatting the values
-        for ani, val in anions.items():
-            if anion == val[0]:
-                form = ani
-                form = form[:-2] + form[-1] if val[0] not in ["Fluoride", "Chloride", "Bromide", "Iodide"] else form
-                form = form.replace("(", ""); form = form.replace(")", "")
-                form = form.replace("+", ""); form = form.replace("-", "")
-                oxide = int(val[1]); name = val[0]
-                self.formula = f"H{oxide if oxide != 1 else ""}{form}"
-
-                if "ulf" in name.lower(): # Exception
-                    name = name.replace("ulf", "ulfur")
-                if "hosph" in name.lower(): # Exception
-                    name = name.replace("hosph", "hosphur")
-                if "ide" in name:
-                    self.name = "Hydro" + name[:-2].lower() + "c Acid" if name[:-3] != "i" else "Hydro" + name[:-2].lower() + "ic Acid"
-                elif "ite" in name:
-                    self.name = name[:-3] + "ous Acid"
-                elif "ate" in name:
-                    self.name = name[:-3] + "ic Acid"
-
-                # Exceptions
-                if self.name == "Hydrocyanic Acid":
-                    self.formula = "HCN"
-                break
+# # Acids
+# class Acid:
+#     def __init__(self, anion):
+#         self.anion = anion
+#
+#         # Formatting the values
+#         for ani, val in anions.items():
+#             if anion == val[0]:
+#                 form = ani
+#                 form = form[:-2] + form[-1] if val[0] not in ["Fluoride", "Chloride", "Bromide", "Iodide"] else form
+#                 form = form.replace("(", ""); form = form.replace(")", "")
+#                 form = form.replace("+", ""); form = form.replace("-", "")
+#                 oxide = int(val[1]); name = val[0]
+#                 self.formula = f"H{oxide if oxide != 1 else ""}{form}"
+#
+#                 if "ulf" in name.lower(): # Exception
+#                     name = name.replace("ulf", "ulfur")
+#                 if "hosph" in name.lower(): # Exception
+#                     name = name.replace("hosph", "hosphur")
+#                 if "ide" in name:
+#                     self.name = "Hydro" + name[:-2].lower() + "c Acid" if name[:-3] != "i" else "Hydro" + name[:-2].lower() + "ic Acid"
+#                 elif "ite" in name:
+#                     self.name = name[:-3] + "ous Acid"
+#                 elif "ate" in name:
+#                     self.name = name[:-3] + "ic Acid"
+#
+#                 # Exceptions
+#                 if self.name == "Hydrocyanic Acid":
+#                     self.formula = "HCN"
+#                 break
 
 # Organic Chemistry
 class OrganicCompound:
@@ -185,13 +185,13 @@ class OrganicCompound:
 # Sample test runs
 if __name__ == "__main__":
 
-    # Acids
-    print("The Acids:")
-    for form, values in anions.items():
-        if "Bi" not in values[0]:
-            name = values[0]
-            print(Acid(name).name,
-                  Acid(name).formula)
+    # # Acids
+    # print("The Acids:")
+    # for form, values in anions.items():
+    #     if "Bi" not in values[0]:
+    #         name = values[0]
+    #         print(Acid(name).name,
+    #               Acid(name).formula)
 
     # Hydrocarbons
     print()
