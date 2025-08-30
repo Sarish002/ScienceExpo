@@ -40,41 +40,43 @@ def FormulaicAnalysis(query):
     for i1, j1 in descriptions.items():
         for i2, j2 in j1.items():
                 if Analyze(query) == Analyze(j2["Symbol"]):
-                    print(f"The Chemical Name for {query} is", i2)
-                    print("Description: ")
+                    formula = (f"The Chemical Name for {query} is {i2}",)
+                    formula += ("Description: ",)
                     for i in j2["Description"]:
-                        print("->  ", i)
-                    print("Uses: ")
+                        formula += (f"> {i}",)
+                    formula += ("Uses: ",)
                     for i in j2["Uses"]:
-                        print("->  ", i)
-                    return
+                        formula += (f"> {i}",)
+                    return "\n".join(formula)
+                    
 
     # Exceptions
     for i1, j1 in exceptions.items():
         for i2, j2 in j1.items():
             if Analyze(query) == Analyze(j2):
-                print(f"The Chemical Name for {query} is", i2)
-                return
+                return (f"The Chemical Name for {query} is {i2}")
+                
 
     # Logic
-    if (H == (2 * C) + 2) and O == 0: 
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Hydrocarbon.Alkane(C).name)
-    if (H == 2 * C) and O == 0:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Hydrocarbon.Alkene(C).name)
-    if (H == (2 * C) - 2) and O == 0:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Hydrocarbon.Alkyne(C).name)
-    if (H == (2 * C) + 2) and O == 1:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Alcohol(C).name)
-    if H == O * C:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.CarboxylicAcid(C).name)
-    if (H == 2 * C and O == 1):
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Aldehyde(C).name)
-    if (H == (2 * C) + 1) and O == N == 1:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Amide(C).name)
-    if (H == (2 * C) + 3):
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Amine(C).name)
-    if (C - 6 == (H - 6) / 2) and O == 0:
-        print(f"The Chemical Name for {query} is", Classes.OrganicCompound.Arene(C - 6).name)
+    if True:
+        if (H == (2 * C) + 2) and O == 0:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Hydrocarbon.Alkane(C).name}"
+        if (H == 2 * C) and O == 0:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Hydrocarbon.Alkene(C).name}"
+        if (H == (2 * C) - 2) and O == 0:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Hydrocarbon.Alkyne(C).name}"
+        if (H == (2 * C) + 2) and O == 1:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Alcohol(C).name}"
+        if H == O * C:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.CarboxylicAcid(C).name}"
+        if (H == 2 * C and O == 1):
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Aldehyde(C).name}"
+        if (H == (2 * C) + 1) and O == N == 1:
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Amide(C).name}"
+        if (H == (2 * C) + 3):
+            return f"The Chemical Name for {query} is {Classes.OrganicCompound.Amine(C).name}"
+
+    print("Couldn't find an answer.")
     
 if __name__ == "__main__":
     while True:
@@ -83,5 +85,4 @@ if __name__ == "__main__":
             FormulaicAnalysis(query)
         else:
             sys.exit()
-        print("--------------------------")
-
+        print("--------------------")
