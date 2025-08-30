@@ -1,7 +1,5 @@
 # ScienceExpo
-For "Macmillan Budding Scientist" Competition.
-
-To Sabareesh
-
-From Abhinav
+For "Macmillan Budding Scientist" Competition.<br>
+__To__: Sabareesh S S<br>
+__From__: Abhinav S Nair
 
