@@ -1,0 +1,12 @@
+Alkane - n : (2n + 2)
+Alkene - n : 2n
+Alkyne - n : (2n - 2)
+Alcohol - n : (2n + 2) : 1
+Ether - nk : (2nk + 2) : 1
+Carboxylic Acid - (n + 1) : (2n + 2) : 2
+Aldehyde - (n + 1) : (2n + 2) : 1
+Ketone - (nk + 1) : (2nk + 2) : 1
+Ester - (nk + 1) : (2nk + 2) : 2
+Amide - (n + 1) : (2n + 3) : 1 : 1
+Amine - n : (2n + 3) : 0 : 1
+Arene - (n + 6) : (2n + 6)
