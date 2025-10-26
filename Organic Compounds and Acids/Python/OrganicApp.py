@@ -1,4 +1,5 @@
 import OrgAI
+import Guess
 import tkinter
 from ttkbootstrap import *
 
@@ -25,14 +26,23 @@ label = Label(text="",
               textvariable=var,
               font=("Trebuchet MS",
                     18),
-              width=56)
-label.place(relx=0.385, rely=0.18, anchor="n")
+              width=82)
+label.place(relx=0.5, rely=0.18, anchor="n")
+label2 = Label(text="",
+               font=("Trebuchet MS", 10))
+label2.lower()
+label2.place(relx=0.5, rely=0.85, anchor="n")
 
 def Logic():
     logic = OrgAI.Logic(entry.get())
     var.set(value=logic.strip("\n"))
-    label.configure(font=("Trebuchet MS", int(100000 * ((0.5) ** len(logic)))),
-                    relief="solid", borderwidth=2, padding=10, justify="left", wraplength=835)
+    label.configure(font=("Trebuchet MS", 12),
+                    relief="solid", borderwidth=2, padding=10, justify="left", wraplength=855)
+    if any(digit in entry.get() for digit in "0123456789") or entry.get() in ["HCHO", "HCOOH"]:
+        print(entry.get())
+    wrong = Guess.Guess(entry.get())
+    string = "Could also be: " +  ", ".join(wrong)
+    label2.configure(text=string)
     entry.delete(0, END)
 
 button = Button(root,
